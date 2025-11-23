@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", "Montserrat Alternates", sans-serif;
+    font-weight: 400;
+    color: #e4e4e4;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(34, 0, 92, 1) 100%);
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* --------------------------------------------------------- main page styles --------------------------------------------------------- */
+
+.container {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 50px 0;
+}
+
+header.container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+header nav {
+    float: right;
+    width: 0%;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+header nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: #2B0070;
+    border-radius: 999px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 350ms cubic-bezier(.2,.8,.2,1);
+}
+
+header nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero--info {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    padding: 40px 20px; 
+}
+
+.hero {
+    padding-bottom: 40px;
+}
+
+.hero--info {
+    max-width: 750px;
+    padding-top: 70px;
+}
+
+.hero--info h1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.hero--info h2 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4; 
+    margin: 6px 0; 
+    text-align: justify; 
+    text-align-last: center; 
+    hyphens: auto;
+}
+
+.hero--info h2.no-justify,
+.no-justify {
+    text-align: center !important;
+    text-align-last: center !important;
+}
+
+.hero--info h2::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.hero--info .btn {
+    background: #6200FF;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 50px;
+    padding: 15px 30px;
+    border: none;
+    transition: all 500ms ease;
+}
+
+.hero--info .btn:hover {
+    background: #ab76ff;
+    cursor: pointer;
+    transform: scale(1.1)
+}
+
+.hero--info .btn + .btn {
+    margin-left: 25px;
+}
+
+.hero-buttons {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    height: auto;
+}
+
+.hero-buttons .btn-left {
+    position: static;
+}
+
+.hero-buttons .btn-right {
+    position: static;
+}
+
+/* --------------------------------------------------------- Socisals page styles --------------------------------------------------------- */
+
+.hero--socials {
+    text-align: center;
+}
+
+.socials--button{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    height: auto;
+}
+
+.home-btn {
+    background: #6200FF;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 50px;
+    padding: 15px 30px;
+    border: none;
+    transition: all 500ms ease;
+}
+
+.home-btn:hover {
+    background: #ab76ff;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.socials--links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hero--socials h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.socials-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.socials-list .btn {
+    display: inline-block;
+    width: 220px;
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 18px;
+}
+
+.socials-list .btn + .btn {
+    margin-left: 0;
+}
+
+/* Social Media Button Styles */
+
+.socials-list .btn.youtube {
+    background: #FF0000;
+    color: #ffffff;
+}
+.socials-list .btn.youtube:hover {
+    background: #e60000;
+}
+
+.socials-list .btn.twitch {
+    background: #9146FF;
+    color: #ffffff;
+}
+.socials-list .btn.twitch:hover {
+    background: #7a35e6;
+}
+
+.socials-list .btn.github {
+    background: #181717;
+    color: #ffffff;
+}
+.socials-list .btn.github:hover {
+    background: #0f0f0f;
+}
+
+.socials-list .btn.telegram {
+    background: #0087db;
+    color: #ffffff;
+}
+
+.socials-list .btn.telegram:hover {
+    background: #036aa7;
+}
+
+.socials-list .btn.vk {
+    background: #4c75a3;
+    color: #ffffff;
+}
+
+.socials-list .btn.vk:hover {
+    background: #3a4f73;
+}
+
+.socials-list .btn.boosty {
+    background: #ff6f00;
+    color: #ffffff;
+}
+
+.socials-list .btn.boosty:hover {
+    background: #e65c00;
+}
+
+.socials-list .btn.donate {
+    background: #ff6f00;
+    color: #ffffff;
+}
+
+.socials-list .btn.donate:hover {
+    background: #e65c00;
+}
