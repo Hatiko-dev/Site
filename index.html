@@ -11,7 +11,7 @@
         <header class="container">
             <nav>
                 <ul>
-                    <li><a href="#">Settings</a></li>
+                    <li><a href="#" id="settingsBtn">Settings</a></li>
                 </ul>
             </nav>
         </header>
@@ -19,9 +19,9 @@
             <div class="hero--info">
                 <h1>FoxSize</h1>
                 <h2>
-                    Hello my friend! I'm a student who loves programming, and want to work in this field in the future. <br>
-                    Here i was post my projects, and links to my socials. <br>
-                    Also i'm streaming on Twitch, and post videos on YouTube! <br>
+                    Hello my friend! I'm a student who loves programming, and want to work in this sphere in the future. <br>
+                    Here i'll post my projects, and links to my socials. <br>
+                    Also i'm streaming on Twitch, and posting videos on YouTube! <br>
                 </h2>
                 <div class="hero-buttons">
                     <a href="socials.html" class="btn btn-left">My socials</a>
@@ -30,5 +30,52 @@
             </div>
         </div>
     </div>
+    <!-- Settings drawer/backdrop -->
+    <div class="settings-backdrop" id="settingsBackdrop" aria-hidden="true">
+        <aside class="settings-drawer" id="settingsDrawer" role="dialog" aria-label="Settings">
+            <button class="drawer-close" id="closeDrawer" aria-label="Close settings">×</button>
+            <h2>Settings</h2>
+            <div class="settings-section">
+                <h3>Language</h3>
+                <div class="lang-list">
+                    <button class="btn lang-btn" data-lang="en">English</button>
+                    <button class="btn lang-btn" data-lang="ru">Русский</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var settingsBtn = document.getElementById('settingsBtn');
+            var backdrop = document.getElementById('settingsBackdrop');
+            var closeBtn = document.getElementById('closeDrawer');
+            function openDrawer() {
+                backdrop.classList.add('open');
+                backdrop.setAttribute('aria-hidden','false');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeDrawer() {
+                backdrop.classList.remove('open');
+                backdrop.setAttribute('aria-hidden','true');
+                document.body.style.overflow = '';
+            }
+            settingsBtn && settingsBtn.addEventListener('click', function (e) {
+                e.preventDefault(); openDrawer();
+            });
+            backdrop && backdrop.addEventListener('click', function (e) {
+                if (e.target === backdrop) closeDrawer();
+            });
+            closeBtn && closeBtn.addEventListener('click', function () { closeDrawer(); });
+            document.querySelectorAll('.lang-btn').forEach(function(btn){
+                btn.addEventListener('click', function(){
+                    var lang = btn.dataset.lang;
+                    // demo behaviour: show alert and close drawer
+                    alert('Language switched to: ' + lang + ' (demo)');
+                    closeDrawer();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
